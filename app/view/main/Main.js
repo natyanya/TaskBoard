@@ -7,7 +7,8 @@ Ext.define('TaskBoard.view.main.Main', {
         'Ext.window.MessageBox',
 
         'TaskBoard.view.main.MainController',
-        'TaskBoard.view.main.MainModel'
+        'TaskBoard.view.main.MainModel',
+        'TaskBoard.view.board.Board'
     ],
 
     controller: 'main',
@@ -67,11 +68,10 @@ Ext.define('TaskBoard.view.main.Main', {
     },
 
     items: [{
-        title: 'Home',
+        title: 'Task Board',
         iconCls: 'fa-home',
-        // The following grid shares a store with the classic version's grid as well!
         items: [{
-            xtype: 'mainlist'
+            xtype: 'board'
         }]
     }]
 });

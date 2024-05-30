@@ -1,0 +1,21 @@
+.task-card {
+    border: 1px #000 solid;
+    margin: 7px;
+    padding: 3px;
+    font-size: 14px;
+}
+
+.importance-must {
+    background-color: #dc3545;
+    color: white;
+}
+
+.importance-should {
+    background-color: #ffc107;
+    color: black;
+}
+
+.importance-could {
+    background-color: #28a745;
+    color: white;
+}
