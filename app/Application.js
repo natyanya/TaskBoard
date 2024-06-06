@@ -14,6 +14,9 @@ Ext.define('TaskBoard.Application', {
             quickTips: true
         }
     },
+    requires: [
+        'TaskBoard.Constants'
+    ],
     stores: [
         'TaskBoard.store.Tasks'
     ],

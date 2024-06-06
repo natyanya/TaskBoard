@@ -78,11 +78,7 @@ Ext.define('TaskBoard.store.Tasks', {
         property: 'user'
     }, {
         sorterFn: function(record1, record2) {
-            const weights = {
-                MUST: 1,
-                SHOULD: 2,
-                COULD: 3
-            };
+            const weights = Const.taskWeights;
 
             let imp1 = record1.get('importance'),
                 imp2 = record2.get('importance');

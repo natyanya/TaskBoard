@@ -13,11 +13,9 @@ Ext.define('TaskBoard.view.board.Board', {
         'TaskBoard.view.board.BoardWindow'
     ],
     constructor: function() {
-        const statuses = ['PLAN', 'IN PROGRESS', 'TESTING', 'DONE'];
-
         let columns = [];
 
-        statuses.forEach(function(status) {
+        Const.taskStatuses.forEach(function(status) {
             columns.push({
                 xtype: 'boardcolumn',
                 title: status,
