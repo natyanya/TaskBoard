@@ -7,9 +7,24 @@ Ext.define('TaskBoard.view.board.BoardController', {
         }
     },
     openTaskForm: function(view, record) {
-        let win = Ext.create('TaskBoard.view.board.BoardWindow');
+        let win = Ext.create('TaskBoard.view.board.BoardWindow'),
+            store = Ext.data.StoreManager.lookup('tasks'),
+            form = win.down('form');
 
-        win.down('form').loadRecord(record);
+        form.getForm().findField('id').validator = function(value) {
+            let existingNumberIndex = store.findBy(rec => rec.get('id') === value);
+            
+            if (
+                value
+                && value !== record.get('id')
+                && existingNumberIndex != -1
+            ) {
+                return 'There is already a task with this number';
+            }
+
+            return true;
+        }
+        form.loadRecord(record);
         win.setTitle(record.get('id'));
         win.show();
     },
