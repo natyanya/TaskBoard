@@ -14,7 +14,9 @@ Ext.define('TaskBoard.Application', {
             quickTips: true
         }
     },
-
+    stores: [
+        'TaskBoard.store.Tasks'
+    ],
     onAppUpdate: function () {
         Ext.Msg.confirm('Application Update', 'This application has an update, reload?',
             function (choice) {

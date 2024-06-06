@@ -73,5 +73,23 @@ Ext.define('TaskBoard.store.Tasks', {
         status: 'TESTING',
         importance: 'SHOULD',
         date: '2024-06-01'
+    }],
+    sorters: [{
+        property: 'user'
+    }, {
+        sorterFn: function(record1, record2) {
+            const weights = {
+                MUST: 1,
+                SHOULD: 2,
+                COULD: 3
+            };
+
+            let imp1 = record1.get('importance'),
+                imp2 = record2.get('importance');
+
+            return (weights[imp1] > weights[imp2])
+                ? 1
+                : (weights[imp1] === weights[imp2] ? 0 : -1);
+        }
     }]
 });
