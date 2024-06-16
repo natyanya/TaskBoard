@@ -73,5 +73,11 @@ Ext.define('TaskBoard.view.main.Main', {
         items: [{
             xtype: 'board'
         }]
+    }, {
+        title: 'Task List',
+        iconCls: 'fa-book',
+        items: [{
+            xtype: 'list'
+        }]
     }]
 });
