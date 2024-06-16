@@ -19,6 +19,7 @@ Ext.define('TaskBoard.view.board.Board', {
             columns.push({
                 xtype: 'boardcolumn',
                 title: status,
+                status: status,
                 border: true,
                 flex: 1,
                 padding: 5,

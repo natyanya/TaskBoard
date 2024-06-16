@@ -7,7 +7,7 @@ Ext.define('TaskBoard.view.board.BoardColumn', {
         itemSelector: 'div.task-card',
         itemTpl: new Ext.XTemplate(
             '<tpl for=".">',
-                '<div class="task-card importance-{[this.getClass(values.importance)]}">',
+                '<div class="task-card unselectable importance-{[this.getClass(values.importance)]}">',
                     '<div>{id}</div>',
                     '<div>{title}</div>',
                     '<div>{user}</div>',
